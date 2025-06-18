@@ -1,9 +1,11 @@
+using Ex40.Models;
+using Ex40.Services;
+
 namespace Ex40;
 
 public class PayrollProcessor
 {
     private Logger _logger = new Logger();
-    private SalaryCalculator _calculator = new SalaryCalculator();
     private NotificationService _notifier = new NotificationService();
     private CurrencyConverter _converter = new CurrencyConverter();
 
@@ -11,7 +13,7 @@ public class PayrollProcessor
     {
         _logger.LogInfo($"Iniciando processamento de {employee.Name}");
 
-        decimal net = _calculator.CalculateNetSalary(employee.Salary);
+        decimal net = employee.CalculateNetSalary();
         _logger.LogInfo($"Salário líquido de {employee.Name}: {net}");
 
         decimal inDollars = _converter.ToUSD(net, "BRL");

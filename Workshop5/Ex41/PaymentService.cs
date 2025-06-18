@@ -1,25 +1,21 @@
-using System;
+using Ex41.Interfaces;
 
 namespace Ex41;
 
-public class PaymentService
+public class PaymentService : IPaymentService
 {
+    private readonly Dictionary<string, IPaymentProcessor> _processors;
+
+    public PaymentService(IEnumerable<IPaymentProcessor> processors)
+    {
+        _processors = processors.ToDictionary(p => p.Type, p => p);
+    }
+
     public void ProcessPayment(Order order, string type)
     {
-        if (type == "CreditCard")
+        if (_processors.TryGetValue(type, out var processor))
         {
-            Console.WriteLine($"Processando cartão de crédito: R$ {order.Total}");
-            // lógica de cartão...
-        }
-        else if (type == "PayPal")
-        {
-            Console.WriteLine($"Processando PayPal: R$ {order.Total}");
-            // lógica de PayPal...
-        }
-        else if (type == "Bitcoin")
-        {
-            Console.WriteLine($"Processando Bitcoin: R$ {order.Total}");
-            // lógica de Bitcoin...
+            processor.Process(order);
         }
         else
         {

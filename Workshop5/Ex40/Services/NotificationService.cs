@@ -1,4 +1,4 @@
-namespace Ex40;
+namespace Ex40.Services;
 
 public class NotificationService
 {

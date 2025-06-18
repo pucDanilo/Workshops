@@ -1,8 +1,9 @@
+using Ex41.Interfaces;
 using System;
 
 namespace Ex41;
 
- public class ReportGenerator
+public class ReportGenerator: IReportGenerator
 {
     public void Generate(Order order)
     {

@@ -1,8 +1,8 @@
-using System;
+using Ex41.Interfaces;
 
 namespace Ex41;
 
-public class NotificationService
+public class NotificationService : INotificationService
 {
     public void Send(string message, string type)
     {
