@@ -3,33 +3,60 @@ using System;
 namespace Ex40;
 
 public class SalaryCalculator
+{
+    public decimal CalculateNetSalary(decimal gross)
     {
-        public decimal CalculateNetSalary(decimal gross)
-        {
-            // Lógica exagerada para uma simples dedução de imposto:
-            IIncomeTax tax;
-            if (gross <= 2000m)        tax = new LowTax();
-            else if (gross <= 4000m)   tax = new MidTax();
-            else if (gross <= 8000m)   tax = new HighTax();
-            else                       tax = new SuperHighTax();
-
-            decimal deducted = gross - tax.Apply(gross);
-            decimal bonus = new PerformanceBonus().Calculate(gross);
-            return deducted + bonus;
-        }
+        IIncomeTax tax = IncomeTaxFactory.GetTax(gross);
+        decimal deducted = gross - tax.Apply(gross);
+        decimal bonus = new PerformanceBonus().Calculate(gross);
+        return deducted + bonus;
     }
+}
 
-    interface IIncomeTax { decimal Apply(decimal amount); }
-    class LowTax : IIncomeTax    { public decimal Apply(decimal a) => a * 0.08m; }
-    class MidTax : IIncomeTax    { public decimal Apply(decimal a) => a * 0.15m; }
-    class HighTax : IIncomeTax   { public decimal Apply(decimal a) => a * 0.22m; }
-    class SuperHighTax : IIncomeTax { public decimal Apply(decimal a) => a * 0.27m; }
+internal interface IIncomeTax
+{
+    decimal Apply(decimal amount);
+}
 
-    class PerformanceBonus
+internal abstract class IncomeTaxBase : IIncomeTax
+{
+    protected abstract decimal Rate { get; }
+
+    public decimal Apply(decimal amount) => amount * Rate;
+}
+
+internal class LowTax : IncomeTaxBase
+{
+    protected override decimal Rate => 0.08m;
+}
+
+internal class MidTax : IncomeTaxBase
+{
+    protected override decimal Rate => 0.15m;
+}
+
+internal class HighTax : IncomeTaxBase
+{
+    protected override decimal Rate => 0.22m;
+}
+
+internal class SuperHighTax : IncomeTaxBase
+{
+    protected override decimal Rate => 0.27m;
+}
+
+internal static class IncomeTaxFactory
+{
+    public static IIncomeTax GetTax(decimal gross) => gross switch
     {
-        public decimal Calculate(decimal amount)
-        {
-            // bônus fixo de 5% para todo mundo
-            return amount * 0.05m;
-        }
-    }
+        <= 2000m => new LowTax(),
+        <= 4000m => new MidTax(),
+        <= 8000m => new HighTax(),
+        _ => new SuperHighTax()
+    };
+}
+
+internal class PerformanceBonus
+{
+    public decimal Calculate(decimal amount) => amount * 0.05m;
+}
