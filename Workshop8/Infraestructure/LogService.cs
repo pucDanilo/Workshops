@@ -1,28 +1,60 @@
-using Microsoft.Extensions.Configuration;
-using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
-using Workshop8.Models;
 
 namespace Workshop8.Infrastructure
 {
     public class LogService
     {
-        public LogService(IConfiguration configuration)
+        public LogService(DbSelector dbSelector)
         {
-            Configuration = configuration;
+            this.dbSelector = dbSelector;
+            _connectionString = dbSelector.GetConnectionString();
         }
 
-        public IConfiguration Configuration { get; }
+        private DbSelector dbSelector;
+        private string _connectionString;
+
+        public string GetMessage(string message)
+        {
+            return $@"origem = {dbSelector.GetProviderLabel()}
+mensagem = {message}
+momento = {DateTime.UtcNow.ToString("o")}";
+        }
+
+        public async Task<IEnumerable<string>> GetMessagesAsync(int PageNumber, int PageSize)
+        {
+            var clientes = new List<string>();
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = connection.CreateCommand();
+                command.CommandText = DbSelector.PageQuery("select distinct Message FROM LogsLocal order by Id ");
+                command.Parameters.AddWithValue("@PageSize", PageSize);
+                command.Parameters.AddWithValue("@Offset", (PageNumber - 1) * PageSize);
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        clientes.Add(reader.GetString(reader.GetOrdinal("Message")));
+                    }
+                }
+            }
+            return clientes;
+        }
 
         public async Task WriteProviderLogAsync(string message)
         {
-            var useRemote = Configuration.GetValue<bool>("Database:UseRemote");
-            var cstr = useRemote
-                ? Configuration.GetConnectionString("Remote") ?? Configuration["Database:Remote"]
-                : Configuration.GetConnectionString("Local") ?? Configuration["Database:Local"];
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = connection.CreateCommand();
 
-            var providerLabel = useRemote ? "REMOTO" : "LOCAL";
-
+                command.CommandText =
+                    @"INSERT INTO LogsLocal (Message, CreatedAt) VALUES (@Message, @CreatedAt);
+                  SELECT last_insert_rowid();";
+                command.Parameters.AddWithValue("@Message", GetMessage(message));
+                command.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
+                await command.ExecuteScalarAsync();
+            }
         }
     }
 }
