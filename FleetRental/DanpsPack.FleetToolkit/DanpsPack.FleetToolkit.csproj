@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <PackageId>DanpsPack.FleetToolkit</PackageId>
+    <Version>1.0.0-rc.1</Version>
+    <Authors>Danilo Pereira</Authors>
+    <Description>Ferramentas para gestão de frota de carros para aluguel</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>Danps Corporation</Title>
+    <Copyright>foobar associations </Copyright>
+    <PackAsTool>False</PackAsTool>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AF.FleetToolkit" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

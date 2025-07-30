@@ -1,0 +1,15 @@
+/* site.css */
+
+/* Reset de margens e fonte padrão */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Espaçamento abaixo da navbar */
+.navbar {
+  margin-bottom: 1rem;
+}
+
+/* Container principal já recebe mt-4 no layout */

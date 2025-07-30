@@ -1,0 +1,91 @@
+@page
+@model Workshop8.Pages.IndexModel
+@{
+    ViewData["Title"] = "Clientes";
+}
+<div class="d-flex justify-content-between align-items-center my-3">
+  <h2>Clientes</h2>
+  <button class="btn btn-primary" type="button" id="createClientBtn">Adicionar Cliente</button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th><th>Nome</th><th>Email</th><th>Criado Em</th><th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var client in Model.Clientes)
+    {
+      <tr>
+        <td>@client.Id</td>
+        <td>@client.Nome</td>
+        <td>@client.Email</td>
+        <td>@client.CriadoEm</td>
+        <td>
+          <button class="btn btn-sm btn-primary"
+                  onclick="openEditModal(@client.Id,'@client.Nome','@client.Email')">
+            Editar
+          </button>
+          <form method="post" asp-page-handler="Delete" asp-route-id="@client.Id"
+                style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+          </form>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="clientModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="clientForm" method="post" action="?handler=Create">
+         @Html.AntiForgeryToken()
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Adicionar Cliente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" asp-for="Input.Id" />
+          <div class="mb-3">
+            <label asp-for="Input.Nome" class="form-label"></label>
+            <input asp-for="Input.Nome" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label asp-for="Input.Email" class="form-label"></label>
+            <input asp-for="Input.Email" class="form-control" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+<script>
+  var clientModal = new bootstrap.Modal(document.getElementById('clientModal'));
+  document.getElementById('createClientBtn').addEventListener('click', function () {
+    document.getElementById('modalTitle').innerText = 'Adicionar Cliente';
+    var form = document.getElementById('clientForm');
+    form.action = '?handler=Create';
+    form.querySelector('input[name="Input.Id"]').value = 0;
+    form.querySelector('input[name="Input.Nome"]').value = '';
+    form.querySelector('input[name="Input.Email"]').value = '';
+    clientModal.show();
+  });
+  function openEditModal(id, nome, email) {
+    document.getElementById('modalTitle').innerText = 'Editar Cliente';
+    var form = document.getElementById('clientForm');
+    form.action = '?handler=Edit';
+    form.querySelector('input[name="Input.Id"]').value = id;
+    form.querySelector('input[name="Input.Nome"]').value = nome;
+    form.querySelector('input[name="Input.Email"]').value = email;
+    clientModal.show();
+  }
+</script>
+}
