@@ -1,4 +1,4 @@
-@page
+@page "{pageClient:int?}"
 @model Workshop8.Pages.IndexModel
 @{
     ViewData["Title"] = "Clientes";
@@ -36,6 +36,42 @@
   </tbody>
 </table>
 
+ @{
+     var msg = "Página " + Model.CurrentPageClients+ " de " + Model.TotalPagesClients + " (Total de Clientes: " + Model.TotalClients+ ")";
+ }
+<p class="text-center">@msg</p>
+
+<nav aria-label="Paginação de Clientes">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(Model.CurrentPageClients <= 1 ? "disabled" : "")">
+            <a class="page-link" asp-page="./Index" asp-route-pageClient="@(Model.CurrentPageClients - 1)">Anterior</a>
+        </li>
+
+        @for (var i = 1; i <= Model.TotalPagesClients; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPageClients ? "active" : "")">
+                <a class="page-link" asp-page="./Index" asp-route-pageClient="@i">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(Model.CurrentPageClients >= Model.TotalPagesClients ? "disabled" : "")">
+            <a class="page-link" asp-page="./Index" asp-route-pageClient="@(Model.CurrentPageClients + 1)">Próximo</a>
+        </li>
+    </ul>
+</nav>
+
+<h3>Logs de Atividade</h3>
+<table class="table table-sm table-bordered">
+    <tbody>
+        @foreach (var log in Model.Logs)
+        {
+            <tr>
+                <td>@log</td>
+            </tr>
+        }
+    </tbody>
+</table>
+ 
 <!-- Modal -->
 <div class="modal fade" id="clientModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">

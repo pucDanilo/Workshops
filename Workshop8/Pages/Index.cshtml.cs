@@ -13,6 +13,12 @@ namespace Workshop8.Pages
         private readonly IClientRepository _repository;
         private readonly LogService _logService;
 
+        public int CurrentPageClients { get; set; }
+        public int TotalPagesClients { get; set; }
+        public int TotalClients { get; set; }
+        public int PageSizeClients = 10;
+        public int PageSizeLogs = 5;
+
         public IndexModel(IClientRepository repository, LogService logService)
         {
             _repository = repository;
@@ -20,13 +26,19 @@ namespace Workshop8.Pages
         }
 
         public IEnumerable<Cliente> Clientes { get; set; }
+        public IEnumerable<string> Logs { get; private set; }
 
         [BindProperty]
         public Cliente Input { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? pageClient)
         {
-            Clientes = await _repository.GetAllClientsAsync();
+            CurrentPageClients = pageClient ?? 1;
+            if (CurrentPageClients < 1) CurrentPageClients = 1;
+            TotalClients = await _repository.GetTotalClientCountAsync();
+            TotalPagesClients = (int)Math.Ceiling(TotalClients / (double)PageSizeClients);
+            Clientes = await _repository.GetAllClientsAsync(CurrentPageClients, PageSizeClients);
+            Logs = await _logService.GetMessagesAsync(1, PageSizeLogs);
         }
 
         public async Task<IActionResult> OnPostCreateAsync()
