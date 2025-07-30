@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
-using Microsoft.Extensions.Configuration;
 using Workshop8.Models;
 
 namespace Workshop8.Data
@@ -20,8 +17,27 @@ namespace Workshop8.Data
 
         public async Task<IEnumerable<Cliente>> GetAllClientsAsync()
         {
-            // TODO: implementar SELECT
-            return new List<Cliente>();
+            var clientes = new List<Cliente>();
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT id, nome, email, criadoEm FROM Clientes;";
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        clientes.Add(new Cliente
+                        {
+                            Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            Nome = reader.GetString(reader.GetOrdinal("Nome")),
+                            Email = reader.GetString(reader.GetOrdinal("Email"))
+                            // Mapeie outras colunas aqui
+                        });
+                    }
+                }
+            }
+            return clientes;
         }
 
         public async Task AddClientAsync(Cliente c)
