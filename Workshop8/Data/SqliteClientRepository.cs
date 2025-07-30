@@ -31,8 +31,8 @@ namespace Workshop8.Data
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             Nome = reader.GetString(reader.GetOrdinal("Nome")),
-                            Email = reader.GetString(reader.GetOrdinal("Email"))
-                            // Mapeie outras colunas aqui
+                            Email = reader.GetString(reader.GetOrdinal("Email")),
+                            CriadoEm = reader.GetDateTime(reader.GetOrdinal("criadoEm"))
                         });
                     }
                 }
@@ -42,17 +42,47 @@ namespace Workshop8.Data
 
         public async Task AddClientAsync(Cliente c)
         {
-            // TODO: implementar INSERT
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = connection.CreateCommand();
+                command.CommandText =
+                    @"INSERT INTO Clientes (Nome, Email, criadoEm) VALUES (@Nome, @Email, @criadoEm);
+                  SELECT last_insert_rowid();"; 
+                command.Parameters.AddWithValue("@Nome", c.Nome);
+                command.Parameters.AddWithValue("@Email", c.Email);
+                command.Parameters.AddWithValue("@criadoEm", DateTime.Now);
+                c.Id = (int)(long)await command.ExecuteScalarAsync(); 
+            }
         }
 
         public async Task UpdateClientAsync(Cliente c)
         {
-            // TODO: implementar UPDATE
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = connection.CreateCommand();
+                command.CommandText =
+                    "UPDATE Clientes SET Nome = @Nome, Email = @Email WHERE Id = @Id;";
+                command.Parameters.AddWithValue("@Nome", c.Nome);
+                command.Parameters.AddWithValue("@Email", c.Email);
+                command.Parameters.AddWithValue("@Id", c.Id);
+
+                await command.ExecuteNonQueryAsync();
+            }
         }
 
         public async Task DeleteClientAsync(int id)
         {
-            // TODO: implementar DELETE
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                var command = connection.CreateCommand();
+                command.CommandText = "DELETE FROM Clientes WHERE Id = @Id;";
+                command.Parameters.AddWithValue("@Id", id);
+
+                await command.ExecuteNonQueryAsync();
+            }
         }
     }
 }
