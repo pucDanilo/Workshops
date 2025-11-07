@@ -1,0 +1,92 @@
+
+Exemplos
+- Abrir aplicação no Client no SGA pra ver códigos e tentar entender como está a estrutura
+- Lançamento de frequência no professor, com o professor 584.097.776-49
+- CPF para teste: 00752392646
+- Tela com angular:
+http://web.desenvolvimento.pucminas.br/SGA.Professor/App/APR/LancamentoNota?seqOrigemAvaliacao=A32EAE48B86603940F579D9B6418353A
+http://localhost/Dev/SGA.Administrativo/App/GRD/EventoAula/Turma/30B0448E6A129633CD9760C54D5412DE
+
+Cursos
+- https://www.cod3r.com.br/courses/angular-9-essencial
+- https://digitalinnovation.one/cursos/angular
+- https://stackblitz.com/edit/angular-comunicacao-behaviorsubject?file=src%2Fapp%2Fvisualizador%2Fvisualizador.component.ts
+- https://www.youtube.com/watch?v=Z0RlhHuw6hk&list=PL4iwH9RF8xHlxBrCZImFELtiew3TneihE
+- https://www.youtube.com/watch?v=Rr_oDnF3UHE&list=PL4iwH9RF8xHlTQb8cPv0HuwKZhR8jEBIK
+- https://www.youtube.com/watch?v=2P5sjPpOSOE&list=PL4iwH9RF8xHnMnKewOLjDvTHzTmyxJNHF
+
+Links
+- angular.io
+- https://movile.blog/aplicacoes-front-angular/
+- https://blog.algaworks.com/o-que-e-angular/
+- https://www.devmedia.com.br/guia/angular/38245
+- https://www.devmedia.com.br/angular-components-conhecendo-e-configurando-no-seu-projeto/40734
+- https://www.alura.com.br/artigos/criando-aplicacoes-angular-com-angular-cli
+- https://www.devmedia.com.br/angular-cli-como-criar-e-executar-um-projeto-angular/38246
+
+Rodar projetos
+* Rodar pelo vscode
+- Dar get e atentar para não dar get com checkout
+- Primeira vez que rodar:
+File open folder, seleciona o projeto client do academico
+ctrl + apostrofe abre o terminal
+npm install, se precisar baixar algum pacote
+.\CreateLinksScss.ps1, se der erro de font, ou arquivo específico
+- npm run professor ou adm (ou pelo vs code ou pelo task runner, rodar aplicação/subir servidor)
+- Rodar script .\AngularCheckout.ps1 pra conseguir comitar (se precisar dar get, dá undo na pasta raiz, no to all.. depois dá outro checkout)
+- Segue exemplos ou desenvolve o que precisar
+- Para dar checkin no projeto angular (até usar o git):
+. Se criou algo novo tem que rodar .\AngularAdd.ps1
+. Pending changes
+. Undo na pasta raiz
+. Ordena por change, e marca só edit (desmarcar arquivos adicionados, senão eles são apagados)
+. Undo -> No to all, assim fica só a tela que foi alterada
+
+* Rodar pelo visual studio
+- Task runner explorer
+- Seleciona SMC.Academico.Client -> Custom -> adm (dois cliques)
+- Enquanto isso ele está rodando: npm run administrativo (tenta adm se der algo diferente)
+
+* Se der erro de recursos, tenta dar um get no framework e rebuilda as solutions, e roda o power shell como administrador, e roda o .\CreateLinksScss.ps1 (Erro Recursos Angular)
+
+Assim o servidor fica habilitado, senão o servidor cai, e não dá para logar na tela, ou vai pelo vs code ou vai pelo task runner explorer
+Quando publicar, se a alteração não pegar, dá um ctrl f5, porque pode ficar cache do angular e não pegar a nova versão
+
+Instruções
+- Pai pro filho - bind
+- Filho pro pai - evento
+- Data-service - fica o retorno dos servicos para ficar global, se não tem que passar por estado
+service - ficam as chamadas dos serviços, e os retornos ficam armazenados como um buffer no data-service
+- O serviço simula o domainservice (se é só um lugar que vai chamar), mas também pode chamar uma controller + serviço + domainservice (para mais telas compartilharem, simula um api porque na controller tem autenticação e filtro de dados)
+- Modulo é um agrupamento de componente, são os namespaces, e aí tem que registrar o módulo do componente, o módulo da área e o módulo da aplicação
+- Nas views models não tem anotattion, porque montamos o html completo
+- Subscribe - escutar os elementos para monitorar quais foram alterados (onChange), e fazer os dependencys, faz um valueChange com o campo que se alterado carrega o datasource de outro campo
+todas as telas tem o carregarDados, que inicializa os objetos daquela tela no dataservice, e pode buscar esses valores no serviço 
+- ModelSnapshot pega valor atual do modelo
+- Debuga como um javascript, coloca um debugger no código e vai acompanhando pelo navegador
+- Moment é usado para trabalhar com datas, valores.. se vai passar o valor pra outro método sempre dá um clone
+- Controller = componente
+- Filter = where
+- Map = select
+- FlatMap = selectmany
+- Find = firstordefault
+- Some = any
+- Includes = contains
+- Tentar sempre usar === ou !== que compara o valor e o tipo, se tiver certeza do tipo usa os ===, se não usa ==, se não tiver certeza de quais são os tipos o javascript tenta fazer a conversão para comparar
+- Ordenação na domain service e ao carregar objeto no angular
+dados.dias = distinctArray(dados.aulas.map(m => m.dataFormatada))
+      .sort()
+      .map(m => ({
+        data: moment(m, 'YYYYMMDD').toDate(),
+        descricaoFormatada: moment(m, 'YYYYMMDD').format('DD/MM/YYYY'),
+        mostrar: false,
+        aulas: dados.aulas.filter(f => f.dataFormatada === m).sort((a,b) => a.horaInicio.localeCompare(b.horaInicio)),
+}));
+- Sort descending data: https://stackoverflow.com/questions/51867404/angular-6-sort-array-of-object-by-date
+- Exemplo de campo que serve de conditional display, se permite = true exibe, se permite = false não exibe
+lancamento-nota.component.ts, lancamento-nota.component.html, lancamento-nota-cabecalho.component.ts, lancamento-nota-cabecalho.component.html, lancamento-nota.model.ts, lancamento-nota.service.ts, LancamentoNotaController -> permiteMateriaLecionada 
+- Exemplo mensagem informativa/exceção
+private async validarColisoesAunosEProfessores(eventosSimulados: EventoAulaModel[]) {
+evento-aula-agendamento-add-reduzido.component
+
+
