@@ -1,0 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using {SOLUCAO}.{PROJETO}.Domain;
+namespace {SOLUCAO}.{PROJETO}.Data.Mappings
+{
+    public class {NOME}Mapping : IEntityTypeConfiguration<{NOME}>
+    {
+        public void Configure(EntityTypeBuilder<{NOME}> builder)
+        {
+            builder.HasKey(c => c.Id);
+[MAPPING_ENTITY] 
+            builder.ToTable("{TABELA}");
+        }
+    }
+}

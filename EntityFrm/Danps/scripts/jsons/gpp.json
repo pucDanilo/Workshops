@@ -1,0 +1,1827 @@
+{
+    "soluctionName": "",
+    "dbo": [
+        {
+            "projeto": "",
+            "table": [
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 82099333,
+                    "name": "modalidade",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_modalidade",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_modalidade",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_modalidade",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "idt_modalidade_oferta",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_modalidade",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_modalidade",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_modalidade",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "idt_modalidade_oferta",
+                            "type": "smallint",
+                            "max_length": 2,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_modalidade",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 194099732,
+                    "name": "motivo_processo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK__motivo_p__65A831E90D7A0286",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_motivo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_motivo_processo",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "nom_motivo",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_motivo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK__motivo_p__65A831E90D7A0286",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "nom_motivo",
+                            "type": "varchar",
+                            "max_length": 50,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_motivo_processo",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_motivo_processo",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 389576426,
+                    "name": "parametro_geral",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "nom_role_administrador",
+                            "type": "varchar",
+                            "max_length": 30
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "cod_visao_nucleo",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 405576483,
+                    "name": "tipo_projeto_pedagogico",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_tipo_projeto_pedagogico",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_tipo_projeto_pedagogico_01",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_grau_tipo_projeto_pedagogico",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "grau",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_modalidade_tipo_projeto_pedagogico",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "modalidade",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_calendario_01",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "calendario",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_projeto_pedagogico_03",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "projeto_pedagogico",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_formacao_tipo_projeto_pedagogico",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "formacao",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_unidade_tipo_projeto",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "unidade_tipo_projeto",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_grupo_pesquisa_tipo_projeto_pedagogico",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "grupo_pesquisa",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_grupo_acesso_tipo_projeto_pedagogico",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "grupo_acesso",
+                                    "parent_column": "seq_tipo_projeto"
+                                },
+                                {
+                                    "referenced_object_id": 405576483,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_localizacao_tipo_projeto_pedagogico",
+                                    "referenced_column": "seq_tipo_projeto",
+                                    "referenced_object": "tipo_projeto_pedagogico",
+                                    "parent_object": "localizacao_tipo_projeto",
+                                    "parent_column": "seq_tipo_projeto"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_tipo_projeto_pedagogico",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_tipo_projeto_pedagogico_01",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_estado_informa_curriculo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "ind_pendencia_chancela",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "DF__tipo_proj__ind_p__5FB337D6",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dsc_conceito",
+                            "type": "varchar",
+                            "max_length": 500
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "idt_motivo",
+                            "type": "int",
+                            "max_length": 4,
+                            "constraints": [
+                                {
+                                    "Name": "DF__tipo_proj__idt_m__0F624AF8",
+                                    "definition": "((1))"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 453576654,
+                    "name": "calendario",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_calendario",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_calendario",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_calendario_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 8
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_calendario",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 453576654,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_projeto_pedagogico_01",
+                                    "referenced_column": "seq_calendario",
+                                    "referenced_object": "calendario",
+                                    "parent_object": "projeto_pedagogico",
+                                    "parent_column": "seq_calendario_reuniao"
+                                },
+                                {
+                                    "referenced_object_id": 453576654,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_projeto_pedagogico_02",
+                                    "referenced_column": "seq_calendario",
+                                    "referenced_object": "calendario",
+                                    "parent_object": "projeto_pedagogico",
+                                    "parent_column": "seq_calendario_implantacao"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_calendario",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "idt_calendario",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dat_inicio_periodo",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dat_fim_periodo",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dat_prevista_reuniao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "sem_implantacao",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "ano_implantacao",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_calendario_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 501576825,
+                    "name": "dominio",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_dominio",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_dominio",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_dominio_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "cod_dominio",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_dominio",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "cod_dominio",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "val_dominio",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_dominio",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_dominio",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "cod_dominio",
+                            "type": "varchar",
+                            "max_length": 30,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_dominio_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_dominio",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "val_dominio",
+                            "type": "smallint",
+                            "max_length": 2,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_dominio",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dsc_dominio",
+                            "type": "varchar",
+                            "max_length": 50
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 533576939,
+                    "name": "projeto_pedagogico",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_projeto_pedagogico",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_projeto_pedagogico",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_projeto_pedagogico_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 4
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_projeto_pedagogico_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_projeto_pedagogico",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 533576939,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_nucleo_projeto_01",
+                                    "referenced_column": "seq_projeto_pedagogico",
+                                    "referenced_object": "projeto_pedagogico",
+                                    "parent_object": "nucleo_projeto",
+                                    "parent_column": "seq_projeto_pedagogico"
+                                },
+                                {
+                                    "referenced_object_id": 533576939,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_responsavel_projeto_01",
+                                    "referenced_column": "seq_projeto_pedagogico",
+                                    "referenced_object": "projeto_pedagogico",
+                                    "parent_object": "responsavel_projeto",
+                                    "parent_column": "seq_projeto_pedagogico"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_projeto_pedagogico",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "nom_curso",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_projeto_pedagogico_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_projeto_pedagogico_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "seq_calendario_reuniao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "seq_calendario_implantacao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "dat_criacao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "ind_pode_anexar_arquivo",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "DF_projeto_pedagogico_01",
+                                    "definition": "('S')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "idt_grau",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "idt_formacao",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "idt_modalidade_oferta",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "dsc_motivo",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "seq_motivo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 14,
+                            "name": "ind_pode_anexar_arquivo_pdf",
+                            "type": "char",
+                            "max_length": 1
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 629577281,
+                    "name": "nucleo_projeto",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_nucleo_projeto",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_nucleo_projeto",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_nucleo_projeto_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_projeto_pedagogico",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_nucleo_projeto_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "cod_turno",
+                                    "id": 5
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_nucleo_projeto_03",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "qtd_vagas",
+                                    "id": 6
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_nucleo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_nucleo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_projeto_pedagogico",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_nucleo_projeto_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "cod_unidade",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "num_curriculo_sga",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "cod_turno",
+                            "type": "smallint",
+                            "max_length": 2,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_nucleo_projeto_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "qtd_vagas",
+                            "type": "smallint",
+                            "max_length": 2,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_nucleo_projeto_03",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "seq_localizacao_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 677577452,
+                    "name": "nucleo_role",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_nucleo_role",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_nucleo_role",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_nucleo_role",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_nucleo_role",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "cod_unidade",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "nom_role",
+                            "type": "varchar",
+                            "max_length": 50
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 709577566,
+                    "name": "responsavel_projeto",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_responsavel_projeto",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_responsavel",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_responsavel_projeto_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_projeto_pedagogico",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_responsavel",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_responsavel_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_projeto_pedagogico",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_responsavel_projeto_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "cod_pessoa",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dat_inicio",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dat_fim",
+                            "type": "datetime",
+                            "max_length": 8
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 757577737,
+                    "name": "log_parametro",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "ind_ativo",
+                            "type": "bit",
+                            "max_length": 1
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 773577794,
+                    "name": "log_excecao",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "nom_tabela",
+                            "type": "varchar",
+                            "max_length": 50
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1637580872,
+                    "name": "grau",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_grau",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_grau",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_grau",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "idt_grau",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_grau",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_grau",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_grau",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "idt_grau",
+                            "type": "smallint",
+                            "max_length": 2,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_grau",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1701581100,
+                    "name": "formacao",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_formacao",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_formacao",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_formacao",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "idt_formacao",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_formacao",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_formacao",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_formacao",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "idt_formacao",
+                            "type": "smallint",
+                            "max_length": 2,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_formacao",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1765581328,
+                    "name": "unidade_tipo_projeto",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_unidade_tipo_projeto",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_unidade_tipo_projeto",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_unidade_tipo_projeto",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "cod_unidade",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_unidade_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_unidade_tipo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_unidade_tipo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "cod_unidade",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_unidade_tipo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1829581556,
+                    "name": "grupo_pesquisa",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_grupo_pesquisa",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_grupo_pesquisa",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_grupo_pesquisa",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "nom_grupo_pesquisa",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_grupo_pesquisa",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_grupo_pesquisa",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_grupo_pesquisa",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "nom_grupo_pesquisa",
+                            "type": "varchar",
+                            "max_length": 40,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_grupo_pesquisa",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1893581784,
+                    "name": "grupo_acesso",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_grupo_acesso",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_grupo_acesso",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_grupo_acesso",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "nom_grupo_acesso",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_grupo_acesso",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_grupo_acesso",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_grupo_acesso",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "nom_grupo_acesso",
+                            "type": "varchar",
+                            "max_length": 40,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_grupo_acesso",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1957582012,
+                    "name": "localizacao_tipo_projeto",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_localizacao_tipo_projeto",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_localizacao_tipo_projeto",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "UN_localizacao_tipo_projeto",
+                            "is_unique": true,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_projeto",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "dsc_localizacao",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_localizacao_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 1957582012,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_nucleo_projeto_02",
+                                    "referenced_column": "seq_localizacao_tipo_projeto",
+                                    "referenced_object": "localizacao_tipo_projeto",
+                                    "parent_object": "nucleo_projeto",
+                                    "parent_column": "seq_localizacao_tipo_projeto"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_localizacao_tipo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_projeto",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_localizacao_tipo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_localizacao",
+                            "type": "varchar",
+                            "max_length": 255,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "UN_localizacao_tipo_projeto",
+                                    "is_unique": true,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1977058079,
+                    "name": "dtproperties",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_dtproperties",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "id",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "property",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "id",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_dtproperties",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "objectid",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "property",
+                            "type": "varchar",
+                            "max_length": 64,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_dtproperties",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "value",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "uvalue",
+                            "type": "nvarchar",
+                            "max_length": 510
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "lvalue",
+                            "type": "image",
+                            "max_length": 16
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "version",
+                            "type": "int",
+                            "max_length": 4,
+                            "constraints": [
+                                {
+                                    "Name": "DF__dtpropert__versi__77BFCB91",
+                                    "definition": "(0)"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

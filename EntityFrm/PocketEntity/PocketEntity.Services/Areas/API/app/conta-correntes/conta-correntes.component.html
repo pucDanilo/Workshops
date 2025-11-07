@@ -1,0 +1,36 @@
+
+<h2>My ContaCorrentes</h2>
+<form>
+<div class='form-group'>
+<label for='exampleInputEmail1'>ContaCorrente name </label>
+<input class='form-control'  #contaCorrenteName>
+<small id='emailHelp' class='form-text text-muted'>
+            (click) passes input value to add() and then clears the input.
+</small>
+</div>
+<button type='submit' class='btn btn-primary' (click)='add(contaCorrenteName.value); contaCorrenteName.value=''">
+Submit
+</button>
+</form>
+<h2>Section title</h2>
+<div class='table-responsive'>
+<table class='table table-striped table-sm'>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor='let contaCorrente of contaCorrentes'> 
+<td>{{contaCorrente.id}}</td>
+<td><a routerLink='/detail/{{contaCorrente.id}}'>{{contaCorrente.name}}</a></td>
+<td>
+<a class='btn' title='delete'> 
+<span class='badge badge-danger' (click)='delete(contaCorrente)'>x</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>

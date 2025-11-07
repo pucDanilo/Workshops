@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using {SOLUCAO}.Core.Data;
+
+namespace {SOLUCAO}.{PROJETO}.Domain
+{
+    public interface I{NOME}Repository : IRepository<{NOME}>
+    {
+        Task<IEnumerable<{NOME}>> ObterTodos();
+        Task<{NOME}> ObterPorId(Guid id);
+        void Adicionar({NOME} produto);
+        void Atualizar({NOME} produto);
+    }
+}

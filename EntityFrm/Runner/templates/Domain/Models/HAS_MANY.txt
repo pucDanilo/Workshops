@@ -1,0 +1,1 @@
+        public ICollection<{NOME}> {NOME_LIST} { get; set; }

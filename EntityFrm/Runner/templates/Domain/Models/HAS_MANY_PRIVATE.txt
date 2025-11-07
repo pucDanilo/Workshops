@@ -1,0 +1,3 @@
+        
+        private readonly List<{NOME}> {NOME_LIST_PRIVATE};
+        public IReadOnlyCollection<{NOME}> {NOME_LIST} => {NOME_LIST_PRIVATE};

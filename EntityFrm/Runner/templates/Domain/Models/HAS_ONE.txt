@@ -1,0 +1,1 @@
+        public {NOME} {NOME} { get; set; }

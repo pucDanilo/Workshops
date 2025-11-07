@@ -1,0 +1,12 @@
+
+cd {FolderSoluction}
+dotnet new sln --name {SoluctionFolder}
+
+cd src
+[NEW_PROJECT]
+
+cd..
+
+[ADD_PROJECT]
+
+pause

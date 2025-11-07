@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>inprocess</AspNetCoreHostingModel>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0-preview2-35157" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PocketEntity.Core\PocketEntity.Core.csproj" />
+    <ProjectReference Include="..\PocketEntity.Migrations\PocketEntity.Migrations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Danps">
+      <HintPath>D:\danps\Danps.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SMC.PraticasCurriculares.Domain">
+      <HintPath>..\..\..\..\..\SMC\Dev\PraticasCurriculares\SMC.PraticasCurriculares.Domain\bin\Debug (HOM)\SMC.PraticasCurriculares.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

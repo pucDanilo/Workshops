@@ -1,0 +1,3403 @@
+{
+    "soluctionName": "",
+    "dbo": [
+        {
+            "projeto": "",
+            "table": [
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 14623095,
+                    "name": "tipo_movimento",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_tipo_movimento",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_movimento",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_tipo_movimento",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 14623095,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_ativo_03",
+                                    "referenced_column": "seq_tipo_movimento",
+                                    "referenced_object": "tipo_movimento",
+                                    "parent_object": "estado_ativo",
+                                    "parent_column": "seq_tipo_movimento"
+                                },
+                                {
+                                    "referenced_object_id": 14623095,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_ativo_04",
+                                    "referenced_column": "seq_tipo_movimento",
+                                    "referenced_object": "tipo_movimento",
+                                    "parent_object": "historico_fluxo",
+                                    "parent_column": "seq_tipo_movimento"
+                                },
+                                {
+                                    "referenced_object_id": 14623095,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_alvo_02",
+                                    "referenced_column": "seq_tipo_movimento",
+                                    "referenced_object": "tipo_movimento",
+                                    "parent_object": "estado_alvo",
+                                    "parent_column": "seq_tipo_movimento"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_tipo_movimento",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "dsc_tipo_movimento",
+                            "type": "varchar",
+                            "max_length": 60
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "cod_unidade",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 71671303,
+                    "name": "log_acesso",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK__log_acesso__0539C240",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_log_acesso",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_log_acesso_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "cod_pessoa",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_log_acesso",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK__log_acesso__0539C240",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "cod_pessoa",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_log_acesso_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dat_acesso",
+                            "type": "datetime",
+                            "max_length": 8,
+                            "constraints": [
+                                {
+                                    "Name": "DF_log_acesso_01",
+                                    "definition": "(getdate())"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "idt_tipo_acesso",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 139147541,
+                    "name": "parametro_integracao",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_parametro_integracao",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_parametro_integracao",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_parametro_integracao",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_parametro_integracao",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "ind_parecer",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dsc_comando",
+                            "type": "varchar",
+                            "max_length": 50
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 258099960,
+                    "name": "parametro_geral",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "dsc_msg_com_confirmacao",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "dsc_msg_sem_confirmacao",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_msg_retorna_estado",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "seq_tipo_grupo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "cod_visao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dsc_assunto_retorna_estado",
+                            "type": "varchar",
+                            "max_length": 100
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 407672500,
+                    "name": "tipo_fluxo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_tipo_fluxo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_cod_aplicacao_guardian",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "cod_aplicacao_guardian",
+                                    "id": 11
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 407672500,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_grupo_role_tipo_fluxo",
+                                    "referenced_column": "seq_tipo_fluxo",
+                                    "referenced_object": "tipo_fluxo",
+                                    "parent_object": "grupo_role",
+                                    "parent_column": "seq_tipo_fluxo"
+                                },
+                                {
+                                    "referenced_object_id": 407672500,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_pastas_tipo_fluxo",
+                                    "referenced_column": "seq_tipo_fluxo",
+                                    "referenced_object": "tipo_fluxo",
+                                    "parent_object": "pasta",
+                                    "parent_column": "seq_tipo_fluxo"
+                                },
+                                {
+                                    "referenced_object_id": 407672500,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_01",
+                                    "referenced_column": "seq_tipo_fluxo",
+                                    "referenced_object": "tipo_fluxo",
+                                    "parent_object": "estado",
+                                    "parent_column": "seq_tipo_fluxo"
+                                },
+                                {
+                                    "referenced_object_id": 407672500,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_fluxo_02",
+                                    "referenced_column": "seq_tipo_fluxo",
+                                    "referenced_object": "tipo_fluxo",
+                                    "parent_object": "fluxo",
+                                    "parent_column": "seq_tipo_fluxo"
+                                },
+                                {
+                                    "referenced_object_id": 407672500,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_fluxo_anexo_05",
+                                    "referenced_column": "seq_tipo_fluxo",
+                                    "referenced_object": "tipo_fluxo",
+                                    "parent_object": "fluxo_anexo",
+                                    "parent_column": "seq_tipo_fluxo"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_tipo_fluxo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "nom_tipo_fluxo",
+                            "type": "varchar",
+                            "max_length": 60
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "nom_sinonimo_fluxo",
+                            "type": "varchar",
+                            "max_length": 60
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "idt_arquitetura",
+                            "type": "tinyint",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "seq_estado_inicial",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "cod_aplicacao_guardian",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_cod_aplicacao_guardian",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "nom_role",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "cod_unidade",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 14,
+                            "name": "dsc_label_estado",
+                            "type": "varchar",
+                            "max_length": 30
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 15,
+                            "name": "dsc_email_origem",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 16,
+                            "name": "nom_email_origem",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 17,
+                            "name": "dsc_assunto_retorna_estado",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 18,
+                            "name": "dsc_msg_retorna_estado",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 19,
+                            "name": "nom_proc_substitui_tags",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 20,
+                            "name": "nom_proc_retorna_responsavel",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 21,
+                            "name": "cod_sistema",
+                            "type": "char",
+                            "max_length": 3
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 22,
+                            "name": "nom_proc_pessoa_responsavel",
+                            "type": "varchar",
+                            "max_length": 50
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 551673013,
+                    "name": "dominio",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "cod_dominio",
+                            "type": "varchar",
+                            "max_length": 30
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "val_dominio",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_dominio",
+                            "type": "varchar",
+                            "max_length": 100
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 718625603,
+                    "name": "dtproperties",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_dtproperties",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "id",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "property",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "id",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_dtproperties",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "objectid",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "property",
+                            "type": "varchar",
+                            "max_length": 64,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_dtproperties",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "value",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "uvalue",
+                            "type": "nvarchar",
+                            "max_length": 510
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "lvalue",
+                            "type": "image",
+                            "max_length": 16
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "version",
+                            "type": "int",
+                            "max_length": 4,
+                            "constraints": [
+                                {
+                                    "Name": "DF__dtpropert__versi__2CBDA3B5",
+                                    "definition": "(0)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 827149992,
+                    "name": "pasta",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_pastas",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_pasta",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_pasta",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 827149992,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_pastas_pastas",
+                                    "referenced_column": "seq_pasta",
+                                    "referenced_object": "pasta",
+                                    "parent_object": "pasta",
+                                    "parent_column": "seq_pasta_sup"
+                                },
+                                {
+                                    "referenced_object_id": 827149992,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_pasta_arquivo_pasta",
+                                    "referenced_column": "seq_pasta",
+                                    "referenced_object": "pasta",
+                                    "parent_object": "pasta_arquivo",
+                                    "parent_column": "seq_pasta"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_pastas",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_pasta_sup",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_pasta",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 891150220,
+                    "name": "pasta_arquivo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_anexo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_pasta",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "url",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dsc_url",
+                            "type": "varchar",
+                            "max_length": 255
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1287675635,
+                    "name": "log_excecao",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "nom_tabela",
+                            "type": "char",
+                            "max_length": 50
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1294627655,
+                    "name": "tipo_anexo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_tipo_anexo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_anexo",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_tipo_anexo",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 1294627655,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_anexo_02",
+                                    "referenced_column": "seq_tipo_anexo",
+                                    "referenced_object": "tipo_anexo",
+                                    "parent_object": "anexo",
+                                    "parent_column": "seq_tipo_anexo"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_tipo_anexo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "dsc_tipo_anexo",
+                            "type": "char",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1303675692,
+                    "name": "parametro_log",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "ind_log",
+                            "type": "bit",
+                            "max_length": 1
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1342627826,
+                    "name": "fluxo_anexo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_fluxo_anexo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_fluxo_anexo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_anexo_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_anexo",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_anexo_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 3
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_anexo_03",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado",
+                                    "id": 4
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_anexo_04",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_historico_fluxo",
+                                    "id": 5
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_anexo_05",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_anexo",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "seq_historico_fluxo",
+                                    "id": 5
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_fluxo_anexo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_fluxo_anexo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_anexo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_05",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_05",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_03",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "seq_historico_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_04",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_anexo_05",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8,
+                            "constraints": [
+                                {
+                                    "Name": "DF_fluxo_anexo_01",
+                                    "definition": "(getdate())"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4,
+                            "constraints": [
+                                {
+                                    "Name": "DF_fluxo_anexo_02",
+                                    "definition": "(1)"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "ind_documento_avaliado",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "ind_arquivado",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "DF_fluxo_anexo_03",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1691153070,
+                    "name": "estado_alvo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_estado_alvo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_estado_alvo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_alvo_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado_origem",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "seq_estado_destino",
+                                    "id": 4
+                                },
+                                {
+                                    "name": "seq_tipo_movimento",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_estado_alvo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_estado_alvo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_estado_origem",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_alvo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_tipo_movimento",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_alvo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "seq_estado_destino",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_alvo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "num_dias_realizacao",
+                            "type": "smallint",
+                            "max_length": 2
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "ind_estado_paralelo",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "ind_justificativa_obrigatoria",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "DF_estado_alvo_ind_justificativa_obrigatoria",
+                                    "definition": "('S')"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1899153811,
+                    "name": "grupo_role",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_grupo_role",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_grupo_role",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_grupo_role_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "nom_role",
+                                    "id": 3
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_grupo_role_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "nom_role",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_grupo_role",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_grupo_role",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_grupo_role_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "nom_role",
+                            "type": "varchar",
+                            "max_length": 100,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_grupo_role_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_grupo_role_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1938105945,
+                    "name": "anexo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_anexo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_anexo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_anexo_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "dat_inclusao",
+                                    "id": 8
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_anexo",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 1938105945,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_pasta_arquivo_anexo",
+                                    "referenced_column": "seq_anexo",
+                                    "referenced_object": "anexo",
+                                    "parent_object": "pasta_arquivo",
+                                    "parent_column": "seq_anexo"
+                                },
+                                {
+                                    "referenced_object_id": 1938105945,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_fluxo_anexo_01",
+                                    "referenced_column": "seq_anexo",
+                                    "referenced_object": "anexo",
+                                    "parent_object": "fluxo_anexo",
+                                    "parent_column": "seq_anexo"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_anexo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "nom_arquivo",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_local",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "tip_arquivo",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "seq_tipo_anexo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_anexo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ],
+                            "constraints": [
+                                {
+                                    "Name": "DF_anexo_01",
+                                    "definition": "(getdate())"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4,
+                            "constraints": [
+                                {
+                                    "Name": "DF_anexo_02",
+                                    "definition": "(1)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1947153982,
+                    "name": "estado_role_discussao",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_estado_role_discussao",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_discussao_role",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_role_discussao_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_role_discussao_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "nom_role",
+                                    "id": 4
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_discussao_role",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_estado_role_discussao",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_role_discussao_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "ind_envio_obrigatorio",
+                            "type": "bit",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "nom_role",
+                            "type": "varchar",
+                            "max_length": 100,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_role_discussao_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dsc_role",
+                            "type": "varchar",
+                            "max_length": 100
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1982630106,
+                    "name": "estado",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_estado",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_estado",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 14
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 14
+                                },
+                                {
+                                    "name": "ind_estado_final",
+                                    "id": 15
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_grupo_notificacao_01",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "grupo_notificacao",
+                                    "parent_column": "seq_estado"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_historico_fluxo_02",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "historico_fluxo",
+                                    "parent_column": "seq_estado"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_notificacao_enviada_01",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "notificacao_enviada",
+                                    "parent_column": "seq_estado"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_fluxo_anexo_03",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "fluxo_anexo",
+                                    "parent_column": "seq_estado"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_tipo_fluxo_01",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "tipo_fluxo",
+                                    "parent_column": "seq_estado_inicial"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_alvo_01",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "estado_alvo",
+                                    "parent_column": "seq_estado_origem"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_alvo_03",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "estado_alvo",
+                                    "parent_column": "seq_estado_destino"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "FK_estado_role_discussao_estado",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "estado_role_discussao",
+                                    "parent_column": "seq_estado"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_ativo_01",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "estado_ativo",
+                                    "parent_column": "seq_estado"
+                                },
+                                {
+                                    "referenced_object_id": 1982630106,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_role_01",
+                                    "referenced_column": "seq_estado",
+                                    "referenced_object": "estado",
+                                    "parent_object": "estado_role",
+                                    "parent_column": "seq_estado"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_estado",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "nom_estado",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_msg_com_confirmacao",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dsc_msg_sem_confirmacao",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "nom_endereco_comando",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "ind_habilita_notificacao",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "df_estado_01",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "ind_recebimento_obrigatorio",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "df_estado_02",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "ind_todos_alvos_necessarios",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "df_estado_03",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "dat_alteracao",
+                            "type": "smalldatetime",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "dat_inclusao",
+                            "type": "smalldatetime",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 14,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 15,
+                            "name": "ind_estado_final",
+                            "type": "char",
+                            "max_length": 1,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ],
+                            "constraints": [
+                                {
+                                    "Name": "df_estado_04",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 16,
+                            "name": "ind_estado_revisao",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 18,
+                            "name": "dsc_assunto",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 19,
+                            "name": "ind_estado_paralelo",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 20,
+                            "name": "ind_exibir_usuario",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 21,
+                            "name": "dsc_instrucao_acao",
+                            "type": "varchar",
+                            "max_length": 500
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 22,
+                            "name": "dsc_instrucao_confirmacao",
+                            "type": "varchar",
+                            "max_length": 500
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 23,
+                            "name": "ind_chancela",
+                            "type": "char",
+                            "max_length": 1,
+                            "constraints": [
+                                {
+                                    "Name": "DF__estado__ind_chan__6C390A4C",
+                                    "definition": "('N')"
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 24,
+                            "name": "dsc_msg_alerta_atraso",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 25,
+                            "name": "num_dias_periodicidade",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 1986106116,
+                    "name": "estado_ativo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_estado_ativo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_estado_ativo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_ativo_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_ativo_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 3
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_ativo_03",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_grupo_estado",
+                                    "id": 19
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_ativo05",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado_ativo",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "seq_estado",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_estado_ativo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_estado_ativo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_ativo05",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_ativo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_ativo05",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_ativo_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_ativo05",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "cod_pessoa_responsavel",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dat_prevista_realizacao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dsc_justificativa",
+                            "type": "varchar",
+                            "max_length": 2000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "seq_tipo_movimento",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "dat_recebimento",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "cod_pessoa_recebimento",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "dat_cancelamento",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "dsc_motivo_cancelamento",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 14,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 15,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 16,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 17,
+                            "name": "dat_confirmacao_parecer",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 18,
+                            "name": "cod_pessoa_confirmacao_parecer",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 19,
+                            "name": "seq_grupo_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_ativo_03",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2002106173,
+                    "name": "estado_role",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_estado_role",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_estado_role",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_role_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "nom_role",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "seq_estado",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_estado_role_02",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "nom_role",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_estado_role",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_estado_role",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_role_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_role_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "nom_role",
+                            "type": "varchar",
+                            "max_length": 100,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_role_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_estado_role_02",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2018106230,
+                    "name": "fluxo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_fluxo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 3
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_fluxo_03",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_fluxo",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "dsc_fluxo",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 2018106230,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_estado_ativo_02",
+                                    "referenced_column": "seq_fluxo",
+                                    "referenced_object": "fluxo",
+                                    "parent_object": "estado_ativo",
+                                    "parent_column": "seq_fluxo"
+                                },
+                                {
+                                    "referenced_object_id": 2018106230,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_historico_fluxo_01",
+                                    "referenced_column": "seq_fluxo",
+                                    "referenced_object": "fluxo",
+                                    "parent_object": "historico_fluxo",
+                                    "parent_column": "seq_fluxo"
+                                },
+                                {
+                                    "referenced_object_id": 2018106230,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_fluxo_anexo_02",
+                                    "referenced_column": "seq_fluxo",
+                                    "referenced_object": "fluxo",
+                                    "parent_object": "fluxo_anexo",
+                                    "parent_column": "seq_fluxo"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_fluxo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "dsc_fluxo",
+                            "type": "varchar",
+                            "max_length": 255,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_03",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_tipo_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                },
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_fluxo_03",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "cod_pessoa_responsavel",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2050106344,
+                    "name": "grupo_notificacao",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_grupo_notificacao",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_grupo_notificacao",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_grupo_notificacao_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_estado",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_grupo_notificacao",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_grupo_notificacao",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_grupo_notificacao_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dsc_grupo_notificacao",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "dsc_email_grupo_notificacao",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "ind_msg_com_confirmacao",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "idt_envio_responsavel",
+                            "type": "char",
+                            "max_length": 1
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "dsc_email_origem",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 14,
+                            "name": "nom_email_origem",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 15,
+                            "name": "dsc_email_com_copia",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 16,
+                            "name": "dsc_assunto",
+                            "type": "varchar",
+                            "max_length": 100
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 17,
+                            "name": "dsc_mensagem",
+                            "type": "varchar",
+                            "max_length": 1000
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2066106401,
+                    "name": "historico_fluxo",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_historico_fluxo",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_historico_fluxo",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "KeyNameOf": "",
+                            "name": "ix_historico_fluxo_01",
+                            "is_unique": false,
+                            "is_primary_key": false,
+                            "columns": [
+                                {
+                                    "name": "seq_fluxo",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_historico_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "fks": [
+                                {
+                                    "referenced_object_id": 2066106401,
+                                    "referenced_column_id": 1,
+                                    "FK_CONSTRAINT": "fk_fluxo_anexo_04",
+                                    "referenced_column": "seq_historico_fluxo",
+                                    "referenced_object": "historico_fluxo",
+                                    "parent_object": "fluxo_anexo",
+                                    "parent_column": "seq_historico_fluxo"
+                                }
+                            ],
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_historico_fluxo",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "ix_historico_fluxo_01",
+                                    "is_unique": false,
+                                    "is_primary_key": false
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "cod_pessoa_responsavel",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dat_prevista_realizacao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "dsc_justificativa",
+                            "type": "varchar",
+                            "max_length": 2000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "dat_recebimento",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 8,
+                            "name": "cod_pessoa_recebimento",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "seq_tipo_movimento",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "dat_cancelamento",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 11,
+                            "name": "dsc_motivo_cancelamento",
+                            "type": "varchar",
+                            "max_length": 255
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 12,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 13,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 14,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 15,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 16,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 17,
+                            "name": "dat_confirmacao_parecer",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 18,
+                            "name": "cod_pessoa_confirmacao_parecer",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 19,
+                            "name": "seq_grupo_estado",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2082106458,
+                    "name": "notificacao_enviada",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "PK_notificacao_enviada",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_notificacao_enviada",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_notificacao_enviada",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "PK_notificacao_enviada",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "seq_estado",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 3,
+                            "name": "dat_inclusao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 4,
+                            "name": "nom_usuario_inclusao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 5,
+                            "name": "dat_alteracao",
+                            "type": "datetime",
+                            "max_length": 8
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 6,
+                            "name": "nom_usuario_alteracao",
+                            "type": "varchar",
+                            "max_length": 50
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 7,
+                            "name": "cod_versao",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 9,
+                            "name": "seq_fluxo",
+                            "type": "int",
+                            "max_length": 4
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 10,
+                            "name": "seq_envio_email",
+                            "type": "int",
+                            "max_length": 4
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2098106515,
+                    "name": "parametro_geral_gwf",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "is_unique": false,
+                            "is_primary_key": false
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "dsc_msg_com_confirmacao",
+                            "type": "varchar",
+                            "max_length": 1000
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "dsc_msg_sem_confirmacao",
+                            "type": "varchar",
+                            "max_length": 1000
+                        }
+                    ]
+                },
+                {
+                    "area": "",
+                    "tableNameOf": "",
+                    "id": 2130106629,
+                    "name": "tipo_documento",
+                    "indexes": [
+                        {
+                            "KeyNameOf": "",
+                            "name": "pk_tipo_documento",
+                            "is_unique": true,
+                            "is_primary_key": true,
+                            "columns": [
+                                {
+                                    "name": "seq_tipo_documento",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 1,
+                            "name": "seq_tipo_documento",
+                            "type": "int",
+                            "max_length": 4,
+                            "indexes": [
+                                {
+                                    "KeyNameOf": "",
+                                    "name": "pk_tipo_documento",
+                                    "is_unique": true,
+                                    "is_primary_key": true
+                                }
+                            ]
+                        },
+                        {
+                            "OwnsOne": "",
+                            "ColumnNameOf": "",
+                            "id": 2,
+                            "name": "dsc_tipo_documento",
+                            "type": "varchar",
+                            "max_length": 50
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

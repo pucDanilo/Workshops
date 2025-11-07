@@ -1,0 +1,8 @@
+{
+	"RootDir": "D:\GitHub\ApiBuilder\Runner", 
+	"JsonFile": "test.json",
+	"TemplateDir": "D:\GitHub\ApiBuilder\Runner\templates",
+	"SolucaoFolder": "DanpsStore", 
+	"OutputDir": "D:\GitHub\Builder\",
+	"ProjectName": "Catalogo"
+}

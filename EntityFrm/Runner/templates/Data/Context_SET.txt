@@ -1,0 +1,2 @@
+
+        public DbSet<{NOME}> {NOME}s { get; set; }  

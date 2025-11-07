@@ -1,0 +1,36 @@
+
+<h2>My ContraChequeNaturezaSummarys</h2>
+<form>
+<div class='form-group'>
+<label for='exampleInputEmail1'>ContraChequeNaturezaSummary name </label>
+<input class='form-control'  #contraChequeNaturezaSummaryName>
+<small id='emailHelp' class='form-text text-muted'>
+            (click) passes input value to add() and then clears the input.
+</small>
+</div>
+<button type='submit' class='btn btn-primary' (click)='add(contraChequeNaturezaSummaryName.value); contraChequeNaturezaSummaryName.value=''">
+Submit
+</button>
+</form>
+<h2>Section title</h2>
+<div class='table-responsive'>
+<table class='table table-striped table-sm'>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor='let contraChequeNaturezaSummary of contraChequeNaturezaSummarys'> 
+<td>{{contraChequeNaturezaSummary.id}}</td>
+<td><a routerLink='/detail/{{contraChequeNaturezaSummary.id}}'>{{contraChequeNaturezaSummary.name}}</a></td>
+<td>
+<a class='btn' title='delete'> 
+<span class='badge badge-danger' (click)='delete(contraChequeNaturezaSummary)'>x</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>

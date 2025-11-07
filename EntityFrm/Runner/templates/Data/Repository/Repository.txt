@@ -1,0 +1,47 @@
+using Microsoft.EntityFrameworkCore;
+using {SOLUCAO}.{PROJETO}.Domain;
+using {SOLUCAO}.Core.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace {SOLUCAO}.{PROJETO}.Data.Repository
+{
+    public class {NOME}Repository : I{NOME}Repository
+    {
+        private readonly {PROJETO}Context _context;
+
+        public {NOME}Repository({PROJETO}Context context)
+        {
+            _context = context;
+        }
+        public IUnitOfWork UnitOfWork => _context; 
+
+        public async Task<IEnumerable<{NOME}>> ObterTodos()
+        {
+            return await _context.{NOME}s.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<{NOME}> ObterPorId(Guid id)
+        {
+            //return await _context.{NOME}s.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.{NOME}s.FindAsync(id);
+        }
+
+        public void Adicionar({NOME} item)
+        {
+            _context.{NOME}s.Add(item);
+        }
+
+        public void Atualizar({NOME} item)
+        {
+            _context.{NOME}s.Update(item);
+        }
+ 
+        public void Dispose()
+        {
+            _context?.Dispose();
+        }
+    }
+}

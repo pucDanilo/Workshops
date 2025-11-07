@@ -1,0 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using {CORE_DOMAIN}.Domain;
+using {CORE_DOMAIN}.DomainObjects;
+using System;
+using {PROJETO}.{AREA}.Domain;
+
+namespace {PROJETO}.{AREA}.Mappings
+{
+    public class {NOME_CLASSE}Mapping : IEntityTypeConfiguration<{NOME_CLASSE}>
+    {
+        public void Configure(EntityTypeBuilder<{NOME_CLASSE}> builder)
+        {
+            builder.HasKey(p => p.Id);
+            {CAMPOS}
+            builder.ToTable(""{NOME_CLASSE}"");
+        }
+    }
+}
