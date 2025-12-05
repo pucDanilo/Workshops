@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { WorkshopResponse } from "./models";
+import type { WorkshopResponse } from "../types";
 
 const API_URL = "https://localhost:5471/api/workshops";
 

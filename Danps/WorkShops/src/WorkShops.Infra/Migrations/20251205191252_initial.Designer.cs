@@ -12,7 +12,7 @@ using Workshops.Infrastructure.Context;
 namespace WorkShops.Infra.Migrations
 {
     [DbContext(typeof(WorkshopsDbContext))]
-    [Migration("20251203133540_initial")]
+    [Migration("20251205191252_initial")]
     partial class initial
     {
         /// <inheritdoc />

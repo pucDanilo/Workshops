@@ -1,7 +1,7 @@
 import axios from "axios";
-import type { NewUser, UserLogin, UserLoginResponse } from "./models";
+import type { NewUser, UserLogin, UserLoginResponse } from "../types";
 
-const API_URL = "https://localhost:5001/api/identity";
+const API_URL = "/api/identity";
 
 export async function register(newUser: NewUser) {
   return axios.post(`${API_URL}/new-account`, newUser);

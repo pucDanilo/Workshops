@@ -1,20 +1,21 @@
-// src/context/AuthContext.tsx
 import { createContext, useContext, useState, useEffect } from "react";
-import type { UserLoginResponse } from "../api/models";
 import { refreshToken } from "../api/authService";
+import type { UserLoginResponse } from "../types";
 
 interface AuthContextType {
   token: UserLoginResponse | null;
   isAuthenticated: boolean;
   setToken: (token: UserLoginResponse) => void;
   logout: () => void;
+  hasRole: (role: string) => boolean;
 }
 
 const AuthContext = createContext<AuthContextType>({
   token: null,
   isAuthenticated: false,
-  setToken: () => {},
-  logout: () => {},
+  setToken: () => { },
+  logout: () => { },
+  hasRole: () => false,
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -43,7 +44,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       handleRefresh();
@@ -52,13 +53,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => clearInterval(interval);
   }, [token]);
 
-  
+
   useEffect(() => {
     const saved = localStorage.getItem("authData");
     if (saved) {
       setTokenState(JSON.parse(saved));
     }
   }, []);
+
+  function hasRole(role: string): boolean {
+    if (!token?.userToken?.claims) return false;
+    // Check for "role" or standard identity role claim
+    return token.userToken.claims.some(c =>
+      (c.type === "role" || c.type.endsWith("/role")) && c.value === role
+    );
+  }
 
   return (
     <AuthContext.Provider
@@ -67,6 +76,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         isAuthenticated: !!token,
         setToken,
         logout,
+        hasRole,
       }}
     >
       {children}
