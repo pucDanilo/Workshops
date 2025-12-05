@@ -1,5 +1,5 @@
 ﻿using Identity.API.Data;
-using WorkShops.WebAPI.Core.Configuration;
+using Danps.WebAPI.Core.Configuration;
 
 namespace Identity.API.Configuration;
 public static class DbMigrationHelpers

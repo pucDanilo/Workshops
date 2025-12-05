@@ -1,5 +1,5 @@
 using Workshops.Domain.Models;
-using WorkShops.Core.Data;
+using Danps.Core.Data;
 
 namespace Workshops.Domain.Repository;
 

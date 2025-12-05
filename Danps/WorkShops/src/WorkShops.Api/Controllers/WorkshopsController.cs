@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Workshops.Api.Dtos;
 using Workshops.Domain.Models;
 using Workshops.Domain.Repository;
-using WorkShops.WebAPI.Core.User;
+using Danps.WebAPI.Core.User;
 
 namespace Workshops.Api.Controllers;
 
@@ -23,8 +23,35 @@ public class WorkshopsController : ControllerBase
     /// <summary>Lista workshops com filtros opcionais.</summary>
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> GetAll([FromQuery] DateTimeOffset? from, [FromQuery] DateTimeOffset? to, [FromQuery] string? q, CancellationToken ct)
+    public async Task<IActionResult> GetAll(
+        [FromQuery] DateTimeOffset? from, 
+        [FromQuery] DateTimeOffset? to, 
+        [FromQuery] string? q,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10,
+        CancellationToken ct = default)
     {
+
+        var workshops = await _repo.GetAllAsync(from, to, q, ct);
+
+        var total = workshops.Count();
+        var items = workshops
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .Select(w => new WorkshopResponse(
+                w.Id,
+                w.Title,
+                w.Description,
+                w.StartAt,
+                w.EndAt,
+                w.Location,
+                w.Capacity,
+                w.IsOnline
+            ))
+            .ToList();
+
+        return Ok(new { total, page, pageSize, items });
+        /*
         var workshops = await _repo.GetAllAsync(from, to, q, ct);
 
         var response = workshops.Select(w => new WorkshopResponse(
@@ -38,7 +65,7 @@ public class WorkshopsController : ControllerBase
             w.IsOnline
         )).ToList();
 
-        return Ok(response);
+        return Ok(response);*/
     }
 
     /// <summary>Obtém um workshop por Id.</summary>

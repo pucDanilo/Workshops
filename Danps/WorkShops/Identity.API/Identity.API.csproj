@@ -34,8 +34,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\WorkShops.Domain\WorkShops.Domain.csproj" />
-    <ProjectReference Include="..\src\WorkShops.WebAPI.Core\WorkShops.WebAPI.Core.csproj" />
-    <ProjectReference Include="..\WorkShops.Core\WorkShops.Core.csproj" />
   </ItemGroup>
 
 </Project>

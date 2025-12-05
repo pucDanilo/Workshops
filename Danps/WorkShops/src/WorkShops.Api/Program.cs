@@ -1,8 +1,9 @@
 // Note: repository implementation removed for workshop exercise (TODOs in project files)
 
+using System.Net;
 using WorkShops.Api;
-using WorkShops.WebAPI.Core.Configuration;
-using WorkShops.WebAPI.Core.Identity;
+using Danps.WebAPI.Core.Configuration;
+using Danps.WebAPI.Core.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,7 @@ DbMigrationHelpers.EnsureSeedData(app).Wait();
 app.UseSwaggerConfiguration();
 
 app.UseApiCoreConfiguration(app.Environment);
-
+ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 app.Run();
 
 //builder.Services.AddMemoryCache();

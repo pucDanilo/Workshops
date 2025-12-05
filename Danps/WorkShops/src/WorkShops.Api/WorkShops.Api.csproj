@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.11">
@@ -19,14 +20,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\WorkShops.Core\WorkShops.Core.csproj" />
-    <ProjectReference Include="..\..\WorkShops.Infra\WorkShops.Infra.csproj" />
+    <ProjectReference Include="..\Danps.WebAPI.Core\Danps.WebAPI.Core.csproj" />
     <ProjectReference Include="..\WorkShops.Domain\WorkShops.Domain.csproj" />
-    <ProjectReference Include="..\WorkShops.WebAPI.Core\WorkShops.WebAPI.Core.csproj" />
+    <ProjectReference Include="..\WorkShops.Infra\WorkShops.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,7 +3,7 @@ using Workshops.Api.Services;
 using Workshops.Domain.Repository;
 using Workshops.Infrastructure.Context;
 using WorkShops.Domain.Services;
-using WorkShops.WebAPI.Core.User;
+using Danps.WebAPI.Core.User;
 
 namespace WorkShops.Api
 {
